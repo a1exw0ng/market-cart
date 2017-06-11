@@ -1,0 +1,12 @@
+click==6.7
+Flask==0.12.2
+itsdangerous==0.24
+Jinja2==2.9.6
+MarkupSafe==1.0
+pluggy==0.4.0
+py==1.4.34
+pytest==3.1.2
+pytest-pep8==1.0.6
+tox==2.7.0
+virtualenv==15.1.0
+Werkzeug==0.12.2
