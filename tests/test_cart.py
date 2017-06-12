@@ -1,4 +1,4 @@
-from models import Cart
+from models.models import Cart
 
 
 def test_add_item():

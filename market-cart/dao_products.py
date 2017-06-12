@@ -20,5 +20,4 @@ def get_product(product_code):
     if product_code in product_catalog.keys():
         return product_catalog[product_code]
     else:
-        # TODO test this
         raise IOError("Product '{}' was not found.")
