@@ -1,5 +1,5 @@
 from collections import Counter
-from constants import product_catalog
+from dao_products import get_product
 
 
 class Product(object):
@@ -15,14 +15,15 @@ class Cart(object):
         self.contents = Counter()
 
     def add_item(self, product_code, quantity=1):
-        if product_code in product_catalog.keys():
+        """ Adds the desired quantity of a product by product code. Pricing is not requested until
+        the user is ready to view the total. """
+
+        try:
+            # Check if product exists in database
+            product = get_product(product_code)
             self.contents[product_code] += quantity
-
-        else:
-            # TODO test this
-            raise IOError("Product '{}' was not found, cannot be added to cart.")
-
-        # TODO verify product exists here or in controller
+        except IOError, e:
+            print(e.message)
 
     def batch_add_item(self, code_list):
         counter = Counter(code_list)
