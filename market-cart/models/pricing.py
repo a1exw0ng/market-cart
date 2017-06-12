@@ -52,10 +52,7 @@ def bogo(cart_contents_with_prices, arguments):
             quantity = cart_contents_with_prices[product].quantity
             applicable_purchases = quantity // 2
             discount = max(applicable_purchases, limit) * cart_contents_with_prices[product].price
-            print 'BOGO applied to {}: {} of {} times. Discount: {}'\
-                .format(product, max(applicable_purchases, limit),
-                        limit,
-                        discount)
+
     return discount
 
 
@@ -84,9 +81,6 @@ def bulk(cart_contents_with_prices, arguments):
 
         if quantity >= required_minimum:
             discount = (base_price - bulk_price) * quantity
-
-        print "BULK applied, {} with quantity {} and discount {}"\
-            .format(product, quantity, discount)
 
     return discount
 
@@ -121,7 +115,6 @@ def combo(cart_contents_with_prices, arguments):
             applicable_purchases = min(cart_product_a.quantity, cart_product_b.quantity)
             discounted_products = max(applicable_purchases, limit)
             discount = discounted_products * cart_product_b.price
-            print "COMBO applied, discount {}".format(discount)
 
     return discount
 

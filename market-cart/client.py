@@ -1,6 +1,6 @@
 from dao_products import get_product
-from models import Cart, Product
-from pricing import get_discounted_total
+from models.models import Cart, Product
+from models.pricing import get_discounted_total
 
 
 class Client(object):
@@ -26,4 +26,4 @@ class Client(object):
                                                       product["price"],
                                                       quantity)
 
-        return get_discounted_total(cart_contents_with_prices)
+        return get_discounted_total(cart_contents_with_prices) / 100.0
